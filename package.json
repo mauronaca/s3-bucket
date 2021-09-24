@@ -1,0 +1,18 @@
+{
+  "name": "s3-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "saludar": "echo \"Hola perro\"",
+    "test": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.995.0",
+    "config.json": "0.0.4",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13"
+  }
+}
