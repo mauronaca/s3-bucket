@@ -1,11 +1,11 @@
 // Import required AWS SDK clients and commands for Node.js.
 import { PutObjectCommand, CreateBucketCommand } from "@aws-sdk/client-s3";
-import { s3Client } from "./clientS3.js";
+import { s3Client } from "./s3client.js";
 
 // Set the parameters
 const params = {
   Bucket: "gdal-bucket-arg-2", // The name of the bucket. For example, 'sample_bucket_101'.
-  Key: "txt-test-1", // The name of the object. For example, 'sample_upload.txt'.
+  Key: "txt-test-2", // The name of the object. For example, 'sample_upload.txt'.
   Body: "'Hello World!'", // The content of the object. For example, 'Hello world!".
 };
 
