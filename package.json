@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "saludar": "echo \"Hola perro\"",
+    "test1": "echo \"nice try\"",
     "test": "nodemon index.js"
   },
   "author": "",
