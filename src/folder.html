@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+</head>
+<body>
+    <h1 id = "name"></h1> 
+    <h2 id = "datetime"></h2>
+
+    <div id = "preview">
+        <p style = "font-size: large; font-weight: bold;">Preview:</p>
+        <img class = "preview-img"> 
+    </div>
+
+    <div class = "list"></div>
+
+    <script type = "module">
+
+        /* This json is for test purpose only */
+        /* All the sentinel image data are found in this json */
+        fetch('./libs/metadata.json')
+        .then(response => response.json())
+        .then(metadata => {
+            const {id, geometry, properties, assets, } = metadata;
+
+            document.title = id;
+            document.getElementById("name").innerHTML = id;
+            document.getElementById("datetime").innerHTML = `Date time: ${properties.datetime}`;
+            document.getElementById("preview").getElementsByTagName("img")[0].src = assets.thumbnail.href;
+            
+            const bands = {};
+            for(let i = 1; i < 12; i++){
+                if(i < 10){
+                    try {
+                        bands["B0" + i.toString()] = assets["B0" + i.toString()];
+                    } catch(error) {
+                        console.log(error);
+                    }
+                    
+                } else {
+                    try {
+                        bands["B" + i.toString()] = assets["B" + i.toString()];    
+                    } catch(error) {
+                        console.log(error);
+                    }
+                    
+                }                
+            }
+            console.log(bands["B01"].href);
+        });
+
+    </script>
+    
+</body>
+</html>
