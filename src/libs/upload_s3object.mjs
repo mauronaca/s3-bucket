@@ -1,6 +1,6 @@
 // Import required AWS SDK clients and commands for Node.js.
 import { PutObjectCommand, CreateBucketCommand } from "@aws-sdk/client-s3";
-import { s3Client } from "./s3client.js";
+import { s3Client } from "./s3client.mjs";
 
 // Set the parameters
 const params = {
@@ -26,4 +26,5 @@ const run = async () => {
     console.log("Error", err);
   }
 };
+
 run();
